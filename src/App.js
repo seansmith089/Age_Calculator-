@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import CardBackground from './components/Card_Background';
+import AgeInput from './components/AgeInput';
+import AgeDisplay from './components/AgeDisplay';
+import Button from './components/Button';
+
+import { AgeContextProvider } from './contexts/AgeContext';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AgeContextProvider>
+      <div className="app_container">
+        <CardBackground>
+          <AgeInput></AgeInput>
+          <Button></Button>
+          <AgeDisplay></AgeDisplay>
+        </CardBackground>
+      </div>
+    </AgeContextProvider>
   );
 }
 
